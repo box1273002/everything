@@ -1,0 +1,88 @@
+{
+    //GENERAL
+    "layer": "top",
+    "height": 12,
+    "spacing": 4,
+    "output": ["eDP-1","DP-2"],
+
+    // MODULE ORDERING
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["bluetooth", "custom/sep", "pulseaudio", "custom/sep", "network", "custom/sep", "cpu","custom/sep", "memory","custom/sep", "temperature", "custom/sep",  "battery", "custom/sep", "clock"],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "warp-on-scroll": true,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "1",
+             "2": "2",
+             "3": "3",
+             "4": "4",
+             "5": "5",
+             "6": "6",
+             "7": "7",
+             "8": "8",
+             "9": "9",
+             "0": "10",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "custom/sep": {
+        "format": "|"
+    },
+    "clock": {
+        "timezone": "Europe/London",
+        "tooltip": false,
+        "format-alt": "{:%d-%m-%Y}"
+    },
+    "cpu": {
+        "format": "CPU {usage}",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "MEM {percentage}",
+        "format-alt": "MEM {used}GiB",
+        "tooltip": false
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "TMP {temperatureC}",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            // "good": 80,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "BAT {capacity}",
+        "format-charging": "CHR {capacity}",
+        "format-plugged": "PLG {capacity}",
+        "tooltip": false,
+    },
+
+    "network": {
+        "format-wifi": "NET {signalStrength}",
+        "format-disconnected": "NET: DSC",
+        "tooltip": false,
+    },
+    "pulseaudio": {
+        "format": "VOL {volume}",
+        "format-bluetooth": "VOL {volume}",
+        "format-bluetooth-muted": "MUT {volume}",
+        "format-muted": "MUT {volume}",
+    },
+
+    "bluetooth": {
+      "format": "BL: ???",
+      "format-on": "BLT ON",
+      "format-connected":"BLT CON",
+      "format-off": "BLT OFF",
+    },
+}
+

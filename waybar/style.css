@@ -1,0 +1,91 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family:otf-font-awesome;
+    padding: 0;
+    margin: 0;
+    background: inherit;
+    font-size: 12px;
+    min-height: 0;
+}
+@define-color colour-1 #F7F2FF;
+@define-color colour-2 #DCCAFE;
+@define-color colour-3 #BAA1FB;
+@define-color colour-4 #9175F1;
+@define-color colour-5 #6249DE;
+@define-color colour-6 #3526B0;
+@define-color colour-7 #1A1482;
+@define-color colour-8 #0B0C54;
+@define-color colour-9 #050726;
+
+window#waybar {
+    background-color: #17163a; 
+
+}
+button,
+#bluetooth,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#workspaces{
+    background-color: transparent;
+    color: @colour-1;
+    border: none;
+    font-weight: 400;
+    margin-top:0.5px;
+    margin-bottom:0.5px;
+}
+#clock {
+  margin-right: 4px;
+}
+
+#workspaces {
+  margin-left: 5px;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+
+#workspaces button {
+  color:rgba(247, 242, 255,0.6);
+}
+#workspaces button.active {
+  color: @colour-1;
+}
+
+@keyframes blink {
+    to {
+        color: rgba(255,255,255,1);
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: rgba(255,0,0,1);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+
+
+#temperature.critical {
+    color: rgba(255,0,0,1);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
